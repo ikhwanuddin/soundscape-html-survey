@@ -5,6 +5,9 @@ Program disusun memanfaatkan WebAudio API, sehingga pemrosesan sinyal memungkink
 
 # pengembang
 Rifqi Ikhwanuddin
+
 Program Studi Teknik Fisika
+
 Jurusan Teknologi Produksi dan Industri
+
 Institut Teknologi Sumatera
