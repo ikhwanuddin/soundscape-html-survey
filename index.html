@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    Uji Dengar Rekaman Soundscape Perpustakaan ITB
+  </title>
+  <script src="https://www.gstatic.com/external_hosted/omnitone/build/omnitone.min.js"></script>
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" type="image/png" href="https://www.itera.ac.id/wp-content/uploads/2019/02/logo_itera_bulet_head.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.7.2.min.js"
+    integrity="sha256-R7aNzoy2gFrVs+pNJ6+SokH04ppcEqJ0yFLkNGoFALQ=" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script>$(document).ready(function () {
+      $('input').change(function () {
+        var hitung = $('.hitung:checked').length
+        $('.hitung_hasil').text(hitung)
+        $('.belum_hitung_hasil').text(22 - hitung)
+        if (hitung < 21) {
+          $('.jangan').text("Jangan disubmit dulu dong!")
+        } else {
+          $('.jangan').text("Silakan disubmit :)")
+        }
+      })
+    });</script>
+</head>
+
+<body>
+  <div align="center"><img style="margin: 20px 0 -40px 0;" width="15%"
+      src="https://www.itera.ac.id/wp-content/uploads/2019/02/logo_itera_bulet_head.png"></div>
+  <h1 align="center">
+    Uji Dengar Rekaman<br />Soundscape Perpustakaan
+  </h1>
+  <p align="center" style="font-weight: lighter; font-size: smaller;">Penelitian SIMLITABMAS nomor kontrak LP3 ITERA:
+    B/168/IT9.C1/PT.01.03/2019</p>
+  <p align="center"><a href="#satu">PENDAHULUAN</a> • <a href="#dua">ATURAN</a> • <a href="#tiga">REKAMAN</a> • <a
+      href="#empat">KUESIONER</a> • <a href="#lima">PENELITI</a> • <a href="#enam">PEMBARUAN</a></p>
+
+  <h3 id="satu">PENDAHULUAN</a></h3>
+  <p>
+    Anda akan menyimak rekaman lingkungan bunyi perpustakaan dari sebuah kampus di Indonesia. Lingkungan bunyi direkam
+    menggunakan sound card yang mengakomodasi XLR serta mikrofon ambisonik yang tersedia di pasaran. Hasil rekaman
+    lapangan yang disebut <strong>A-Format</strong> (4 kanal) dikonversi menjadi <strong>B-Format</strong> (4 kanal)
+    dengan aplikasi REAPER. Standar B-Format yang dikehendaki mengikuti konvensi <strong>ACN</strong> (<em>Ambisonic
+      Channel Numbering</em>) dan skema normalisasi SN3D (<em>Schmidt Semi-Normalisation</em>). Lalu rekaman B-Format
+    ini ditayangkan dalam halaman ini dengan bantuan WebAudio API dan Omnitone agar dapat dinikmati secara stereo.
+  </p>
+  <p>
+    Rekaman ini berdurasi kurang lebih 5 menit dan Anda diminta untuk mengisi kuesioner persepsi berupa skala angka ke
+    kiri dan ke kanan sebagaimana tersedia di bawah ini. Persepsi bunyi lingkungan yang Anda anggap sesuai harus
+    ditentukan dengan memilih skala angka ke kiri atau ke kanan.
+  </p>
+
+  <h3 id="dua">ATURAN UJI DENGAR</h3>
+  <ol>
+    <li>Carilah ruang atau area yang tenang dan minim bunyi bising.</li>
+    <li>Anda wajib mengenakan <i>earphone</i> atau <i>headphone</i>, lalu klik <mark>PLAY</mark>.</li>
+    <li>Naikkan volume bunyi perangkat Anda sehingga terdengar <strong>lebih tinggi</strong> dari bising lingkungan di
+      sekitar Anda.</li>
+    <li>Bacalah sekilas seluruh kata kunci persepsi di sisi kanan dan kiri layar.</li>
+    <li>Pejamkan mata, ini membantu Anda menghayati rekaman bunyi lingkungan dan memeringkat persepsi yang sesuai.
+      Dengan mendengar rekaman ini bayangkan Anda sedang berada di lokasi tersebut.</li>
+    <li>Isilah <strong>semua</strong> skala persepsi sesuai yang Anda rasakan, kemudian klik <mark>Submit</mark>.</li>
+    <li>Apabila Anda ingin menghapus isian dan mengisi kembali, klik <mark>Clear</mark>.</li>
+  </ol>
+
+  <h3 id="tiga">REKAMAN LINGKUNGAN BUNYI</h3>
+  <button id="eButtonPlayback" disabled>► PLAY</button> <button id="eButtonPlayback" disabled>► PLAY</button> <button id="eButtonPlayback" disabled>► PLAY</button> <button id="eButtonPlayback" disabled>► PLAY</button>
+  <h3 id="empat">KUESIONER PERSEPSI BERSKALA</h3>
+  <div class="wrap">
+
+    <!-- Likert scale HTML was inspired from https://codepen.io/Buttonpresser/pen/qiuIx -->
+    <form action="" id="test-form" class="likert">
+      <label class="statement">1. Beri peringkat kenyamanan bila Anda beraktivitas di lingkungan ini.</label>
+      <div class="clearfix">
+        <div class="semantik1">Tak Nyaman</div>
+        <div class="skala">
+          <ul class='likert'>
+            <li><input type="radio" name="R01" value="1" class="hitung"><label>2</label></li>
+            <li><input type="radio" name="R01" value="2" class="hitung"><label>1</label></li>
+            <li><input type="radio" name="R01" value="3" class="hitung"><label>0</label></li>
+            <li><input type="radio" name="R01" value="4" class="hitung"><label>1</label></li>
+            <li><input type="radio" name="R01" value="5" class="hitung"><label>2</label></li>
+          </ul>
+        </div>
+        <div class="semantik2">Nyaman</div>
+      </div>
+
+      <label class="statement">2. Beri peringkat selera yang muncul bila Anda beraktivitas di lingkungan ini.</label>
+      <div class="clearfix">
+        <div class="semantik1">Benci</div>
+        <div class="skala">
+          <ul class='likert'>
+            <li><input type="radio" name="R02" value="1" class="hitung"><label>2</label></li>
+            <li><input type="radio" name="R02" value="2" class="hitung"><label>1</label></li>
+            <li><input type="radio" name="R02" value="3" class="hitung"><label>0</label></li>
+            <li><input type="radio" name="R02" value="4" class="hitung"><label>1</label></li>
+            <li><input type="radio" name="R02" value="5" class="hitung"><label>2</label></li>
+          </ul>
+        </div>
+        <div class="semantik2">Suka</div>
+      </div>
+
+      <label class="statement">3. Beri peringkat perasaan yang muncul bila Anda beraktivitas di lingkungan ini.</label>
+      <div class="clearfix">
+        <div class="semantik1">Gelisah</div>
+        <div class="skala">
+          <ul class='likert'>
+            <li><input type="radio" name="R03" value="1" class="hitung"><label>2</label></li>
+            <li><input type="radio" name="R03" value="2" class="hitung"><label>1</label></li>
+            <li><input type="radio" name="R03" value="3" class="hitung"><label>0</label></li>
+            <li><input type="radio" name="R03" value="4" class="hitung"><label>1</label></li>
+            <li><input type="radio" name="R03" value="5" class="hitung"><label>2</label></li>
+          </ul>
+        </div>
+        <div class="semantik2">Tenteram</div>
+      </div>
+
+      <label class="statement">4. Beri peringkat kualitas bunyi-bunyian yang Anda dengarkan.</label>
+      <div class="clearfix">
+        <div class="semantik1">Tak Penting</div>
+        <div class="skala">
+          <ul class='likert'>
+            <li><input type="radio" name="R04" value="1" class="hitung"><label>2</label></li>
+            <li><input type="radio" name="R04" value="2" class="hitung"><label>1</label></li>
+            <li><input type="radio" name="R04" value="3" class="hitung"><label>0</label></li>
+            <li><input type="radio" name="R04" value="4" class="hitung"><label>1</label></li>
+            <li><input type="radio" name="R04" value="5" class="hitung"><label>2</label></li>
+          </ul>
+        </div>
+        <div class="semantik2">Penting</div>
+      </div>
+
+      <label class="statement">5. Beri peringkat ketergangguan bila Anda harus beraktivitas di sana.</label>
+      <div class="clearfix">
+        <div class="semantik1">Tak Ganggu</div>
+        <div class="skala">
+          <ul class='likert'>
+            <li><input type="radio" name="R05" value="1" class="hitung"><label>2</label></li>
+            <li><input type="radio" name="R05" value="2" class="hitung"><label>1</label></li>
+            <li><input type="radio" name="R05" value="3" class="hitung"><label>0</label></li>
+            <li><input type="radio" name="R05" value="4" class="hitung"><label>1</label></li>
+            <li><input type="radio" name="R05" value="5" class="hitung"><label>2</label></li>
+          </ul>
+        </div>
+        <div class="semantik2">Ganggu</div>
+      </div>
+      
+  <label class="statement">6. Bagaimana perasaan Anda bila berada di lingkungan ini?</label>
+  <div class="clearfix">
+    <div class="semantik1">Sedih</div>
+    <div class="skala">
+      <ul class='likert'>
+        <li><input type="radio" name="R06" value="1" class="hitung"><label>2</label></li>
+        <li><input type="radio" name="R06" value="2" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R06" value="3" class="hitung"><label>0</label></li>
+        <li><input type="radio" name="R06" value="4" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R06" value="5" class="hitung"><label>2</label></li>
+      </ul>
+    </div>
+    <div class="semantik2">Senang</div>
+  </div>
+
+  <label class="statement">7. Bagaimana lingkungan bunyi yang Anda dengar dari rekaman ini?</label>
+  <div class="clearfix">
+    <div class="semantik1">Gaduh</div>
+    <div class="skala">
+      <ul class='likert'>
+        <li><input type="radio" name="R07" value="1" class="hitung"><label>2</label></li>
+        <li><input type="radio" name="R07" value="2" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R07" value="3" class="hitung"><label>0</label></li>
+        <li><input type="radio" name="R07" value="4" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R07" value="5" class="hitung"><label>2</label></li>
+      </ul>
+    </div>
+    <div class="semantik2">Sunyi</div>
+  </div>
+
+  <label class="statement">8. Bagaimanakah perubahan lingkungan bunyi pada rekaman ini?</label>
+  <div class="clearfix">
+    <div class="semantik1">Cepat</div>
+    <div class="skala">
+      <ul class='likert'>
+        <li><input type="radio" name="R08" value="1" class="hitung"><label>2</label></li>
+        <li><input type="radio" name="R08" value="2" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R08" value="3" class="hitung"><label>0</label></li>
+        <li><input type="radio" name="R08" value="4" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R08" value="5" class="hitung"><label>2</label></li>
+      </ul>
+    </div>
+    <div class="semantik2">Lambat</div>
+  </div>
+
+  <label class="statement">9. Beri peringkat kemampuan berkonsentrasi bila Anda harus beraktivitas di lingkungan ini.</label>
+  <div class="clearfix">
+    <div class="semantik1">Distraksi</div>
+    <div class="skala">
+      <ul class='likert'>
+        <li><input type="radio" name="R09" value="1" class="hitung"><label>2</label></li>
+        <li><input type="radio" name="R09" value="2" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R09" value="3" class="hitung"><label>0</label></li>
+        <li><input type="radio" name="R09" value="4" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R09" value="5" class="hitung"><label>2</label></li>
+      </ul>
+    </div>
+    <div class="semantik2">Fokus</div>
+  </div>
+
+  <label class="statement">10. Beri peringkat terhadap kriteria berikut bila Anda harus beraktivitas di lingkungan ini.</label>
+  <div class="clearfix">
+    <div class="semantik1">Keras</div>
+    <div class="skala">
+      <ul class='likert'>
+        <li><input type="radio" name="R10" value="1" class="hitung"><label>2</label></li>
+        <li><input type="radio" name="R10" value="2" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R10" value="3" class="hitung"><label>0</label></li>
+        <li><input type="radio" name="R10" value="4" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R10" value="5" class="hitung"><label>2</label></li>
+      </ul>
+    </div>
+    <div class="semantik2">Lembut</div>
+  </div>
+
+  <label class="statement">11. Beri peringkat terhadap kriteria berikut bila Anda harus beraktivitas di lingkungan ini.</label>
+  <div class="clearfix">
+    <div class="semantik1">Kasar</div>
+    <div class="skala">
+      <ul class='likert'>
+        <li><input type="radio" name="R11" value="1" class="hitung"><label>2</label></li>
+        <li><input type="radio" name="R11" value="2" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R11" value="3" class="hitung"><label>0</label></li>
+        <li><input type="radio" name="R11" value="4" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R11" value="5" class="hitung"><label>2</label></li>
+      </ul>
+    </div>
+    <div class="semantik2">Halus</div>
+  </div>
+
+  <label class="statement">12. Beri peringkat kualitas bahan yang berinteraksi dengan bunyi di lingkungan ini.</label>
+  <div class="clearfix">
+    <div class="semantik1">Meredam</div>
+    <div class="skala">
+      <ul class='likert'>
+        <li><input type="radio" name="R12" value="1" class="hitung"><label>2</label></li>
+        <li><input type="radio" name="R12" value="2" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R12" value="3" class="hitung"><label>0</label></li>
+        <li><input type="radio" name="R12" value="4" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R12" value="5" class="hitung"><label>2</label></li>
+      </ul>
+    </div>
+    <div class="semantik2">Memantul</div>
+  </div>
+
+  <label class="statement">13. Beri peringkat suasana bunyi-bunyian yang ada di lingkungan ini.</label>
+  <div class="clearfix">
+    <div class="semantik1">Tetap</div>
+    <div class="skala">
+      <ul class='likert'>
+        <li><input type="radio" name="R13" value="1" class="hitung"><label>2</label></li>
+        <li><input type="radio" name="R13" value="2" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R13" value="3" class="hitung"><label>0</label></li>
+        <li><input type="radio" name="R13" value="4" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R13" value="5" class="hitung"><label>2</label></li>
+      </ul>
+    </div>
+    <div class="semantik2">Berubah</div>
+  </div>
+
+  <label class="statement">14. Beri peringkat suasana rekaman ini dalam kaitannya relasi antar manusia.</label>
+  <div class="clearfix">
+    <div class="semantik1">Individual</div>
+    <div class="skala">
+      <ul class='likert'>
+        <li><input type="radio" name="R14" value="1" class="hitung"><label>2</label></li>
+        <li><input type="radio" name="R14" value="2" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R14" value="3" class="hitung"><label>0</label></li>
+        <li><input type="radio" name="R14" value="4" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R14" value="5" class="hitung"><label>2</label></li>
+      </ul>
+    </div>
+    <div class="semantik2">Kolektif</div>
+  </div>
+
+  <label class="statement">15. Beri peringkat suasana rekaman ini dalam kaitannya relasi antar manusia.</label>
+  <div class="clearfix">
+    <div class="semantik1">Kosong</div>
+    <div class="skala">
+      <ul class='likert'>
+        <li><input type="radio" name="R15" value="1" class="hitung"><label>2</label></li>
+        <li><input type="radio" name="R15" value="2" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R15" value="3" class="hitung"><label>0</label></li>
+        <li><input type="radio" name="R15" value="4" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R15" value="5" class="hitung"><label>2</label></li>
+      </ul>
+    </div>
+    <div class="semantik2">Penuh</div>
+  </div>
+
+  <label class="statement">16. Beri peringkat suasana rekaman ini dalam kaitannya relasi antar manusia.</label>
+  <div class="clearfix">
+    <div class="semantik1">Privat</div>
+    <div class="skala">
+      <ul class='likert'>
+        <li><input type="radio" name="R16" value="1" class="hitung"><label>2</label></li>
+        <li><input type="radio" name="R16" value="2" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R16" value="3" class="hitung"><label>0</label></li>
+        <li><input type="radio" name="R16" value="4" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R16" value="5" class="hitung"><label>2</label></li>
+      </ul>
+    </div>
+    <div class="semantik2">Komunal</div>
+  </div>
+
+  <label class="statement">17. Beri peringkat suasana rekaman ini dalam kaitannya relasi antar manusia.</label>
+  <div class="clearfix">
+    <div class="semantik1">Monoton</div>
+    <div class="skala">
+      <ul class='likert'>
+        <li><input type="radio" name="R17" value="1" class="hitung"><label>2</label></li>
+        <li><input type="radio" name="R17" value="2" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R17" value="3" class="hitung"><label>0</label></li>
+        <li><input type="radio" name="R17" value="4" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R17" value="5" class="hitung"><label>2</label></li>
+      </ul>
+    </div>
+    <div class="semantik2">Variatif</div>
+  </div>
+
+  <label class="statement">18. Beri peringkat ukuran ruang yang ada dalam bayangan Anda.</label>
+  <div class="clearfix">
+    <div class="semantik1">Sempit</div>
+    <div class="skala">
+      <ul class='likert'>
+        <li><input type="radio" name="R18" value="1" class="hitung"><label>2</label></li>
+        <li><input type="radio" name="R18" value="2" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R18" value="3" class="hitung"><label>0</label></li>
+        <li><input type="radio" name="R18" value="4" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R18" value="5" class="hitung"><label>2</label></li>
+      </ul>
+    </div>
+    <div class="semantik2">Lapang</div>
+  </div>
+
+  <label class="statement">19. Beri peringkat jarak bunyi dalam lingkungan bunyi ini.</label>
+  <div class="clearfix">
+    <div class="semantik1">Dekat</div>
+    <div class="skala">
+      <ul class='likert'>
+        <li><input type="radio" name="R19" value="1" class="hitung"><label>2</label></li>
+        <li><input type="radio" name="R19" value="2" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R19" value="3" class="hitung"><label>0</label></li>
+        <li><input type="radio" name="R19" value="4" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R19" value="5" class="hitung"><label>2</label></li>
+      </ul>
+    </div>
+    <div class="semantik2">Jauh</div>
+  </div>
+
+  <label class="statement">20. Beri peringkat kondisi ruang indoor yang ada dalam bayangan Anda.</label>
+  <div class="clearfix">
+    <div class="semantik1">Tersekat</div>
+    <div class="skala">
+      <ul class='likert'>
+        <li><input type="radio" name="R20" value="1" class="hitung"><label>2</label></li>
+        <li><input type="radio" name="R20" value="2" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R20" value="3" class="hitung"><label>0</label></li>
+        <li><input type="radio" name="R20" value="4" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R20" value="5" class="hitung"><label>2</label></li>
+      </ul>
+    </div>
+    <div class="semantik2">Tergabung</div>
+  </div>
+
+  <label class="statement">21. Beri peringkat posisi bunyi dalam lingkungan bunyi ini.</label>
+  <div class="clearfix">
+    <div class="semantik1">Rendah</div>
+    <div class="skala">
+      <ul class='likert'>
+        <li><input type="radio" name="R21" value="1" class="hitung"><label>2</label></li>
+        <li><input type="radio" name="R21" value="2" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R21" value="3" class="hitung"><label>0</label></li>
+        <li><input type="radio" name="R21" value="4" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R21" value="5" class="hitung"><label>2</label></li>
+      </ul>
+    </div>
+    <div class="semantik2">Tinggi</div>
+  </div>
+
+  <label class="statement">22. Beri peringkat keragaman bunyi dalam lingkungan bunyi ini.</label>
+  <div class="clearfix">
+    <div class="semantik1">Sederhana</div>
+    <div class="skala">
+      <ul class='likert'>
+        <li><input type="radio" name="R22" value="1" class="hitung"><label>2</label></li>
+        <li><input type="radio" name="R22" value="2" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R22" value="3" class="hitung"><label>0</label></li>
+        <li><input type="radio" name="R22" value="4" class="hitung"><label>1</label></li>
+        <li><input type="radio" name="R22" value="5" class="hitung"><label>2</label></li>
+      </ul>
+    </div>
+    <div class="semantik2">Rumit</div>
+  </div> 
+      <p align="center"><span class="hitung_hasil">0</span> sudah diisi dan <span style="color: red"
+          class="belum_hitung_hasil">22</span> belum diisi</p>
+      <p align="center" class="jangan"></p>
+      <div class="buttons"><button class="clear">⚠ Clear</button> <button type="submit" id="submit-form"
+          class="submit">☀ Submit</button></div>
+
+    </form>
+  </div>
+  <div class="clear"></div>
+  <h3 id="lima">PENELITI & PENGEMBANG KODE</h3>
+  <p id="lima">
+    Rifqi <a href="https://ikhwanudd.in" target="_blank">Ikhwanuddin</a></br>
+    Program Studi <a href="http://tf.itera.ac.id" target="_blank">Teknik Fisika</a><br>
+    Jurusan Teknologi Produksi dan Industri<br>
+    <a href="http://itera.ac.id" target="_blank">Institut Teknologi Sumatera</a></br></br>
+
+    Randy Frans Fela</br>
+    PhD Candidate</br>
+    <a href="https://www.fotonik.dtu.dk" target="_blank">Danmarks Tekniske Universitet Fotonik</a></br>
+    Denmark
+  </p>
+  <h3 id="enam">PEMBARUAN TERAKHIR</h3>
+  <p id="enam">
+    <script language="javascript">
+      months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+      var d = new Date();
+      var weekday = new Array(7);
+      weekday[0] = "Ahad";
+      weekday[1] = "Senin";
+      weekday[2] = "Selasa";
+      weekday[3] = "Rabu";
+      weekday[4] = "Kamis";
+      weekday[5] = "Jumat";
+      weekday[6] = "Sabtu";
+
+      var d = new Date();
+      (d.getFullYear());
+      
+      var theDate = new Date(document.lastModified);
+      theDate.setTime((theDate.getTime() + (60 * 60)))
+      with (theDate) {
+        document.write(weekday[getDay()] + ', ' + getDate() + ' ' + months[getMonth()] + ' ' + d.getFullYear() + ' ' + getHours() + ':' + getMinutes() + ":" + getUTCSeconds() + " WIB")
+      } 
+    </script>
+  </p>
+  <div class="clear"></div>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js"></script>
+  <script src="../examples/html-gsheet.js"></script>
+</body>
+
+</html>
