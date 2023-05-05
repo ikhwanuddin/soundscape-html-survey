@@ -7,7 +7,5 @@ Program disusun memanfaatkan WebAudio API, sehingga pemrosesan sinyal memungkink
 Rifqi Ikhwanuddin
 
 Program Studi Teknik Fisika
-
 Jurusan Teknologi Produksi dan Industri
-
 Institut Teknologi Sumatera
